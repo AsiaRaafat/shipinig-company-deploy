@@ -26,14 +26,22 @@ function TranslateProvider ({children}) {
 
     }   
     
+    // useEffect(() => {
+    //   if(localStorage.getItem("lang").includes("ar")){
+    //     setArLang(true);
+    //   } else{
+    //     setArLang(false);
+    //   } 
+    //   i18n.changeLanguage(localStorage.getItem("lang"))
+    // }, [])
     useEffect(() => {
-      if(localStorage.getItem("lang").includes("ar")){
-        setArLang(true);
-      } else{
-        setArLang(false);
-      } 
-      i18n.changeLanguage(localStorage.getItem("lang"))
-    }, [])
+    if (localStorage.getItem("lang")?.includes("ar")) {
+      setArLang(true);
+    } else {
+      setArLang(false);
+    }  
+  i18n.changeLanguage(localStorage.getItem("lang") || "en");
+   }, []);
     
 
 
