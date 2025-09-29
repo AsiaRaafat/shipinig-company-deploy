@@ -9,27 +9,27 @@ export default function SingleNew() {
   const { id } = useParams();
   const [product, setproduct] = useState({});
   const language = localStorage.getItem("lang");  
- <p>ده نص ثابت كتبته بإيدي وهيبان دايمًا حتى لو الـ API مش شغال</p>
-
+  
   useEffect(() => {
     console.log("Test ");
     axios
-      .get(
-        `https://shipping.somee.com/api/Website/GetNewsById?Id=${id}&lang=${language}`,
-        {
-          params: {
-            populate: "*",
-          },
-        }
-      )
-      .then((res) => {
-        console.log(res.data);
-        setproduct(res.data);
-      });
+    .get(
+      `https://shipping.somee.com/api/Website/GetNewsById?Id=${id}&lang=${language}`,
+      {
+        params: {
+          populate: "*",
+        },
+      }
+    )
+    .then((res) => {
+      console.log(res.data);
+      setproduct(res.data);
+    });
   }, []);
-
+  
   return (
     <div className="container news"    dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <p>ده نص ثابت كتبته بإيدي وهيبان دايمًا حتى لو الـ API مش شغال</p>
       <Helmet>
       <title>News- amazonmarin shipping company</title>
       <link rel="canonical" href="https://sysar.online/" />
