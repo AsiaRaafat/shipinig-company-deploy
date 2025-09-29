@@ -9,7 +9,8 @@ export default function SingleNew() {
   const { id } = useParams();
   const [product, setproduct] = useState({});
   const language = localStorage.getItem("lang");  
- 
+ <p>ده نص ثابت كتبته بإيدي وهيبان دايمًا حتى لو الـ API مش شغال</p>
+
   useEffect(() => {
     console.log("Test ");
     axios
